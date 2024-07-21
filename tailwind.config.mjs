@@ -10,6 +10,9 @@ export default {
 				background: colors.gray,
 				secondary: colors.indigo,
 			},
+			screens: {
+				xs: "425px",
+			},
 		},
 	},
 	plugins: [],
