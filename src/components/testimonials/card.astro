@@ -1,0 +1,22 @@
+---
+import { Star } from "lucide-react";
+
+interface Props {
+	content: string;
+	author: string;
+	stars: number;
+}
+
+const { content, author, stars } = Astro.props;
+const starsArr = Array.from(Array(stars > 5 ? 5 : stars));
+---
+
+<div
+	class="flex flex-col justify-between basis-80 shrink grow items-start gap-8 w-full max-w-xl min-w-80"
+>
+	<div class="flex justify-start items-center">
+		{starsArr.map(() => <Star size={20} className="fill-background-950" />)}
+	</div>
+	<p class="w-full font-medium text-background-700">{content}</p>
+	<p>{author}</p>
+</div>

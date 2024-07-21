@@ -1,0 +1,24 @@
+---
+import Card from "./card.astro";
+---
+
+<section class="w-full px-5 xl:px-0 sm:max-w-7xl mx-auto relative pb-40">
+	<h2 class="text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">
+		Customer testimonials
+	</h2>
+	<p class="text-background-700 mb-10 lg:mb-20">
+		Read what our satisfied customers have to say about us.
+	</p>
+	<div class="w-full flex gap-8 justify-between flex-wrap">
+		<Card
+			content="Shadow Explorer saved my files when I thought all hope was lost."
+			author="Jessica Len"
+			stars={5}
+		/>
+		<Card
+			content="I can't thank Shadow Explorer enough for recovering my important files."
+			author="zach powaski"
+			stars={5}
+		/>
+	</div>
+</section>
