@@ -1,0 +1,68 @@
+---
+import restoreFilesGraphMini from "@/assets/graph-mini.svg";
+import Files from "@/assets/files.svg";
+import Card from "@components/features/card.astro";
+import FileSearch from "@/assets/file-search.svg";
+import DownloadBtn from "@components/download-btn.astro";
+---
+
+<div class="w-full px-5 sm:px-0 sm:max-w-7xl mx-auto relative mb-40">
+	<div class="text-center mx-auto mb-20 max-w-3xl md:max-w-4xl px-5">
+		<!-- Title -->
+		<h1
+			class="block font-bold text-gray-950 text-3xl md:text-4xl lg:text-5xl mb-6"
+		>
+			Unlock Windows Recovery Options for Non-Professional and Non-Enterprise
+			Editions
+		</h1>
+		<!-- End Title -->
+
+		<div class="max-w-2xl md:max-w-3xl lg:max-w-4xl text-center mx-auto mb-6">
+			<p class="text-sm sm:text-base lg:text-lg text-gray-700">
+				Shadow Explorer offers a comprehensive solution for recovering corrupted
+				or lost files on any edition of Windows. With features like retrieving
+				older versions of files or folders, showing copies based on timeline,
+				and searching for shadow copies, it provides a seamless user experience.
+			</p>
+		</div>
+	</div>
+	<div
+		class="w-full grid grid-cols-1 lg:grid-cols-[repeat(2,minmax(380px,1fr))] px-5 justify-items-center gap-8 md:gap-10 xl:gap-20"
+	>
+		<Card
+			title="Timeline View"
+			content="Easily retrieve older versions of files or folders with Shadow Explorer's intuitive interface."
+			img={restoreFilesGraphMini}
+		/>
+		<Card
+			title="Retrieve Files"
+			content="Easily retrieve older versions of files or folders with Shadow Explorer's intuitive interface."
+			img={Files}
+		/>
+		<Card
+			img={FileSearch}
+			className="relative order-4 md:order-none before:absolute before:w-full overflow-hidden before:bg-gradient-to-t before:from-background-50 before:to-background-50/0 before:h-32 before:bottom-0 before:left-0"
+		/>
+		<div class="self-center order-3 md:order-none">
+			<p class="font-semibold text-gray-700 mb-1 md:mb-4 text-sm md:text-base">
+				Efficient
+			</p>
+			<!-- Title -->
+			<h1
+				class="block font-bold text-gray-950 text-2xl md:text-4xl capitalize mb-3 md:mb-6"
+			>
+				search for lost files easily with Shadow Explorer
+			</h1>
+			<!-- End Title -->
+
+			<div class="max-w-2xl md:max-w-3xl lg:max-w-4xl mb-3 md:mb-6">
+				<p class="text-sm sm:text-base lg:text-lg text-gray-700">
+					With Shadow Explorer, you can quickly search and retrieve previous
+					versions of your files or folders. Our intuitive interface makes the
+					process seamless and hassle-free.
+				</p>
+			</div>
+			<DownloadBtn />
+		</div>
+	</div>
+</div>
