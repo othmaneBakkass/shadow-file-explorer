@@ -1,0 +1,54 @@
+---
+import DownloadBtn from "@components/download-btn.astro";
+import restoreFilesGraph from "@/assets/restore-files-graph.svg";
+import restoreFilesGraphMobile from "@/assets/graph-mobile.svg";
+---
+
+<!-- Hero -->
+<div class="w-full max-w-[calc(100%-20px)] sm:max-w-7xl mx-auto relative my-40">
+	<div class="text-center mx-auto mb-20">
+		<!-- Title -->
+		<h1
+			class="block font-bold text-gray-950 text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+		>
+			Restore, Explore, Recover
+		</h1>
+		<!-- End Title -->
+
+		<div class="max-w-2xl md:max-w-3xl lg:max-w-4xl text-center mx-auto mb-6">
+			<p class="text-sm sm:text-base lg:text-lg text-gray-700">
+				Shadow Explorer is a powerful software solution that allows you to
+				easily retrieve older versions of files or folders, show copies based on
+				timeline, and search for shadow copies.
+			</p>
+		</div>
+
+		<DownloadBtn />
+	</div>
+	<div
+		class="w-full max-w-[calc(100%-20px)] sm:max-w-[calc(100%-48px)] xl:max-w-7xl mx-auto bg-gray-50 pt-20 md:pt-40 rounded-3xl md:rounded-[48px] h-auto pb-16 overflow-hidden shadow-2xl shadow-[#b9b9b969]"
+	>
+		<div class="px-8 md:px-32 lg:max-w-5xl mb-16">
+			<h2
+				class="block font-bold text-gray-950 capitalize text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6"
+			>
+				Go back in time and restore your lost files
+			</h2>
+			<p class="text-sm sm:text-base lg:text-lg text-gray-700">
+				Easily access and restore previous versions of your files or folders
+				with Shadow Explorer's powerful recovery feature.
+			</p>
+		</div>
+		<img
+			src={restoreFilesGraph.src}
+			class="hidden md:block"
+			alt="restore Files Graph"
+		/>
+		<img
+			src={restoreFilesGraphMobile.src}
+			class="block md:hidden mx-auto"
+			alt="restore Files Graph"
+		/>
+	</div>
+</div>
+<!-- End Hero -->
