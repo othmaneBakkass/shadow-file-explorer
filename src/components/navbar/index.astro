@@ -1,0 +1,18 @@
+---
+import Logo from "@components/logo/index.astro";
+import MenuLink from "@components/navbar/menu-link.astro";
+import { Menu } from "@components/navbar/menu";
+---
+
+<header class="w-full max-w-7xl mx-auto">
+	<nav
+		class="relative flex items-center justify-between py-5 w-full max-w-[calc(100%-20px)] sm:max-w-[calc(100%-48px)] xl:max-w-7xl mx-auto"
+	>
+		<Logo />
+		<Menu client:load>
+			<MenuLink slot={"menuLink"} link="#features">features</MenuLink>
+			<MenuLink slot={"menuLink"} link="#testimonials">testimonials</MenuLink>
+			<MenuLink slot={"menuLink"} link="#download">download</MenuLink>
+		</Menu>
+	</nav>
+</header>
