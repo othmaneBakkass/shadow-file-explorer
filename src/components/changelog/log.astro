@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string;
+	date: string;
+}
+const { title, date } = Astro.props;
+---
+
+<div class="w-full">
+	<div
+		class="flex w-full items-center flex-wrap gap-x-4 gap-y-1 justify-between mb-2">
+		<h3 class="text-xl font-bold leading-none text-background-950">
+			{title}
+		</h3>
+		<p class="text-background-500 text-sm">Released {date}</p>
+	</div>
+	<slot />
+</div>

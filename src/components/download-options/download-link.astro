@@ -1,0 +1,18 @@
+---
+import { ArrowDownFromLine } from "lucide-react";
+
+interface Props {
+	fileName: string;
+	version: string;
+}
+
+const fileName = Astro.props.fileName;
+const version = Astro.props.version;
+---
+
+<a
+	href={fileName}
+	class="block underline text-background-50 text-sm sm:text-base hover:text-background-300">
+	<ArrowDownFromLine className="inline mr-2" size="18px" />
+	download version {version}</a
+>
