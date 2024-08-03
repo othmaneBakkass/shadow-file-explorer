@@ -1,54 +1,53 @@
-# Astro Starter Kit: Basics
+# How to Add Files to be Downloaded ?
 
-```sh
-npm create astro@latest -- --template basics
+## Public Folder
+
+inside the project you will find a folder named public inside it put the files to be downloaded
+
+*currently only .exe and .zip file format are supported*
+
+## link the file with the download button
+
+for the download button to work you need to go into the *components* folder inside *src* you will find folders.
+representing sections of the page go to each of the folders that have a download button.
+
+### for example
+
+* hero
+* features
+* cta
+* download-options
+
+inside of each of those folders you will find an index file.
+inside that file you will find **"<DownloadBtn \/>"** or **"<DownloadLink \/>"** those are what we call *components*.
+
+those components will have an attribute called fileName give it a value that value should be the name of the file you want people to download and it is the file that you've put inside of the public folder
+
+#### for example
+
+let say I have a file called test.exe inside the public folder for me to let people download it I will go the hero folder click on the index file then search for **"<DownloadBtn \/>"** it will have a fileName attribute then I will write fileName="test.exe" and that it now people can download test.exe
+
+# How to Add files formats ?
+
+in the root of the project you will find a file named
+astro.config.mjs click on it and you will see a line with the word assetsInclude it will be something like this:
+
+```js
+export default defineConfig({
+ ///
+ assetsInclude: ["**/*.exe", "**/*.zip"],
+ ///
+});
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+in assetsInclude list add this string with the file format you want ,"\*\*/\*.fileformat"
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+for example:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```js
+export default defineConfig({
+ ///
+ assetsInclude: ["**/*.exe", "**/*.zip", "**/*.png"],
+ ///
+});
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
