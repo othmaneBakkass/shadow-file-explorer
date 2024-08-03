@@ -1,10 +1,37 @@
 ---
-import { ArrowDownFromLine } from "lucide-react";
+import { twMerge } from "tailwind-merge";
+
+/**
+ * DISCLAIMER:
+ * Put the file to be downloaded in the public folder
+ * the file can be of .exe or .zip format
+ * if you want to add a new file format then go to the file named
+ * astro.config.mjs
+ * then in assetsInclude list add ,"**\/*.fileformat" then remove the backslash "\"
+ * example: "**\/*.png"
+ *
+ */
+
+interface Props {
+	variant: "outline" | "primary" | "secondary";
+	className?: string;
+	fileName: string;
+}
+const { variant, className, fileName } = Astro.props;
+const colors = {
+	outline:
+		"text-background-50 border-2 border-background-50 hover:text-background-200 hover:border-background-200 ",
+	primary: "text-background-50 bg-primary-600 hover:bg-primary-700 ",
+	secondary: "text-background-950 bg-background-50 hover:bg-background-200",
+};
 ---
 
-<button
-	class="py-3 sm:px-6 px-4 text-sm sm:text-base transition-colors duration-200 inline-flex items-center gap-x-3 font-medium rounded-lg sm:rounded-xl bg-primary-300 text-background-950 hover:bg-primary-400 disabled:opacity-50 disabled:pointer-events-none"
->
-	Download now
-	<ArrowDownFromLine size="18px" />
-</button>
+<a href={"/" + fileName} download="fig" target="_blank">
+	<button
+		class={twMerge(
+			`py-3 sm:px-6 px-4 text-sm sm:text-base transition-colors duration-200 inline-flex items-center gap-x-3 font-medium rounded-lg sm:rounded-xl disabled:opacity-50 disabled:pointer-events-none  ${colors[variant]}`,
+			className
+		)}>
+		<slot />
+	</button>
+</a>
