@@ -4,7 +4,6 @@ import { twMerge } from "tailwind-merge";
 export function MenuIcon({
 	class: classes,
 	onClick,
-	...props
 }: {
 	class?: string;
 	onClick?: () => void;
